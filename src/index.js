@@ -1,10 +1,10 @@
 module.exports = function longestConsecutiveLength(array) {
   let starttArr = new Set(array)
   let endArr = new Set()
-  let answer = 0,
+  let ans = 0,
     right = 0,
     left = 0
-  for (let i in array) {
+  for (i in array) {
     if (!(array[i] in endArr)) {
       endArr.add(array[i])
       left = right = array[i]
@@ -16,8 +16,8 @@ module.exports = function longestConsecutiveLength(array) {
         right++
         endArr.add(right)
       }
-      answer = Math.max(answer, right - left + 1)
+      ans = Math.max(ans, right - left + 1)
     }
   }
-  return (answer)
+  return (ans)
 }
